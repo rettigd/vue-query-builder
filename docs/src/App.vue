@@ -11,7 +11,7 @@
           :rules="basicDemoRules"
           :maxDepth="2"
           :initialQuery="basicDemoInitialQuery"
-          @queryUpdated="basicDemoQueryUpdated"
+          @query-updated="basicDemoQueryUpdated"
           ></vue-query-builder>
       </div>
 
@@ -27,7 +27,7 @@
     <pre><code class="language-markup">&lt;vue-query-builder
   :rules="rules"
   :maxDepth="2"
-  @queryUpdated="queryUpdated"
+  @query-updated="queryUpdated"
   &gt;&lt;/vue-query-builder&gt;</code></pre>
 
     <pre><code class="language-javascript">import VueQueryBuilder from 'vue-query-builder';
@@ -83,7 +83,7 @@ export default {
   :labels="labels"
   :initialQuery="initialQuery"
   :styled="styled"
-  @queryUpdated="queryUpdated"
+  @query-updated="queryUpdated"
   &gt;&lt;/vue-query-builder&gt;</code></pre>
 
     <br>
