@@ -11,7 +11,7 @@
         :maxDepth="3"
         :labels="labels"
         :initialQuery="initialQuery"
-        @queryUpdated="queryUpdated"
+        @query-updated="queryUpdated"
         ></vue-query-builder>
 
       <hr>
