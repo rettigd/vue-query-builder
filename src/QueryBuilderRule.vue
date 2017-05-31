@@ -16,7 +16,7 @@
       <input :class="{ 'form-control': styled }" v-if="rule.inputType === 'text'" type="text" v-model="query.value" :placeholder="labels.textInputPlaceholder"></input>
       <input :class="{ 'form-control': styled }" v-if="rule.inputType === 'number'" type="number" v-model="query.value"></input>
 
-      <template v-if="isCustomComponent">
+      <template v-if="isCustomComponent" @input="valueUpdated">
         <Custom v-model="query.value"></Custom>
       </template>
 
@@ -53,8 +53,8 @@ export default {
     remove: function() {
       this.$emit('child-deletion-requested', this.index);
     },
-    updateValue(e) {
-      console.log(e)
+    valueUpdated () {
+      console.log('valueUpdated')
     }
   },
 
@@ -72,10 +72,6 @@ export default {
     if (this.rule.inputType === 'checkbox') {
       this.query.value = [];
     }
-    this.$on('input', function(value) {
-      console.log('message')
-      this.query.value = value;
-    })
   }
 }
 </script>
