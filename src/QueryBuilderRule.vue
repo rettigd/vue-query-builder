@@ -17,7 +17,7 @@
       <input :class="{ 'form-control': styled }" v-if="rule.inputType === 'number'" type="number" v-model="query.value"></input>
 
       <template v-if="isCustomComponent">
-        <Custom :value="query.value"></Custom>
+        <Custom :value="query.value" @input="updateQuery"></Custom>
       </template>
 
       <div class="checkbox" v-if="rule.inputType === 'checkbox'">
@@ -53,6 +53,9 @@ export default {
     remove: function() {
       this.$emit('child-deletion-requested', this.index);
     },
+    updateQuery(event) {
+      this.query.value = event
+    }
   },
 
   computed: {
