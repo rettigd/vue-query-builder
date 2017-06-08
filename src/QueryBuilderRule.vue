@@ -54,7 +54,7 @@ export default {
       this.$emit('child-deletion-requested', this.index);
     },
     updateQuery(event) {
-      this.query.value = event
+      this.query.value = event.target.value
     }
   },
 
