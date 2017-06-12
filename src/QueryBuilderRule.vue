@@ -45,7 +45,8 @@ export default {
 
   created () {
     if (typeof this.rule.type === 'object') {
-      this.$options.components['Custom'] = this.rule.type;
+      let type = Object.assign({}, this.rule.type)
+      this.$options.components['Custom'] = type;
     }
   },
 
