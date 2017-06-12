@@ -45,7 +45,7 @@ export default {
 
   created () {
     if (typeof this.rule.type === 'object') {
-      this.$options.components['Custom'] = this.rule.type;
+      this.$options.components['Custom'] = JSON.parse(JSON.stringify(this.rule.type));
     }
   },
 
