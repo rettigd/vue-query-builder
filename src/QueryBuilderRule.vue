@@ -46,7 +46,7 @@ export default {
   created () {
     if (typeof this.rule.type === 'object') {
       let type = Object.assign({}, this.rule.type)
-      this.$options.components['Custom'] = type;
+      this.$options.components['Custom'] = deepClone(this.rule.type);
     }
   },
 
