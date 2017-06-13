@@ -64,12 +64,13 @@ export default {
       var rule = null;
 
       this.rules.forEach(function(value){
+        console.log("each", value)
         if ( value.id === ruleId ) {
           rule = value;
           return false;
         }
       });
-
+      console.log("rule", rule)
       return rule;
     },
 
