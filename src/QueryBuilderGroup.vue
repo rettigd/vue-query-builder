@@ -62,7 +62,7 @@ export default {
   methods: {
     ruleById (ruleId) {
       var rule = null;
-
+console.log("target", ruleId)
       this.rules.forEach(function(value){
         console.log("each", value)
         if ( value.id === ruleId ) {
