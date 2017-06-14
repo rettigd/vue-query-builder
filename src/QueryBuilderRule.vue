@@ -53,7 +53,7 @@
     }
   },
   watch: {
-    "rule.type" : function(value, oldValue) {
+    rule(value, oldValue) {
       console.log(value, oldValue)
     }
   } ,
