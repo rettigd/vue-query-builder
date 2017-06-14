@@ -57,6 +57,7 @@
       this.$emit('child-deletion-requested', this.index);
     },
     updateQuery(event) {
+      this.$emit('child-value-updated', { index: this.index, value: event.target.value });
       this.query.value = event.target.value
     }
   },
