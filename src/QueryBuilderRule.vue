@@ -45,7 +45,7 @@
 
   props: ['query', 'index', 'rule', 'styled', 'labels'],
 
-  created () {
+  beforeMount () {
     if (typeof this.rule.type === 'object') {
       let type = Object.assign({}, this.rule.type)
       this.$options.components['Custom'] = deepClone(this.rule.type);

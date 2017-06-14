@@ -123,7 +123,6 @@ export default {
     this.$watch(
       'query',
       function( newQuery ){
-        console.log(newQuery)
         this.$emit('query-updated', deepClone(newQuery) );
       }, {
       deep: true
