@@ -102,7 +102,7 @@ export default {
     },
 
     updateChildValue (value) {
-      this.query.children[value.index].value = value.value;
+      this.query.children[value.index].query.value = value.value;
     },
 
     removeChild (index) {

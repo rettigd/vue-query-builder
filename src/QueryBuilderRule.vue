@@ -52,11 +52,6 @@
       console.log(this.$options.components['Custom'])
     }
   },
-  watch: {
-    rule(value, oldValue) {
-      console.log(value, oldValue)
-    }
-  } ,
 
   methods: {
     remove: function() {
@@ -64,7 +59,7 @@
     },
     updateQuery(event) {
       this.$emit('child-value-updated', { index: this.index, value: event.target.value });
-      this.query.value = event.target.value
+//      this.query.value = event.target.value
     }
   },
 
