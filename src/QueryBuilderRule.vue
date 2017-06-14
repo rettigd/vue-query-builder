@@ -17,7 +17,7 @@
       <input :class="{ 'form-control': styled }" v-if="rule.inputType === 'number'" type="number" v-model="query.value"></input>
 
       <template v-if="isCustomComponent">
-        <Custom :key="rule.id" :value="query.value" @input="updateQuery"></Custom>
+        <Custom :value="query.value" @input="updateQuery"></Custom>
       </template>
 
       <div class="checkbox" v-if="rule.inputType === 'checkbox'">
@@ -48,7 +48,7 @@
   beforeMount () {
     if (typeof this.rule.type === 'object') {
       let type = Object.assign({}, this.rule.type)
-      this.$options.components['Custom'] = deepClone(this.rule.type);
+      this.$options.components[this.query.rule] = deepClone(this.rule.type);
       console.log('rule-created', this.rule.type)
       console.log(this.$options.components)
     }
