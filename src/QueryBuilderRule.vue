@@ -52,6 +52,11 @@
       console.log(this.$options.components['Custom'])
     }
   },
+  watch: {
+    "rule.type" : function(value, oldValue) {
+      console.log(value, oldValue)
+    }
+  } ,
 
   methods: {
     remove: function() {
