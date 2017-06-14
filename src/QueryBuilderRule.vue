@@ -49,6 +49,7 @@
     if (typeof this.rule.type === 'object') {
       let type = Object.assign({}, this.rule.type)
       this.$options.components['Custom'] = deepClone(this.rule.type);
+      console.log('rule-created', this.rule.type)
       console.log(this.$options.components)
     }
   },
