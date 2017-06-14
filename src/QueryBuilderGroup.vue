@@ -70,6 +70,7 @@ export default {
           return false;
         }
       });
+      console.log("rule", rule)
       return rule;
     },
 
