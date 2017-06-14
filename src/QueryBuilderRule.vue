@@ -47,10 +47,7 @@
 
   beforeMount () {
     if (typeof this.rule.type === 'object') {
-      let type = Object.assign({}, this.rule.type)
       this.$options.components[this.query.rule] = deepClone(this.rule.type);
-      console.log('rule-created', this.rule.type)
-      console.log(this.$options.components)
     }
   },
 
@@ -60,7 +57,6 @@
     },
     updateQuery(event) {
       this.$emit('child-value-updated', { index: this.index, value: event.target.value });
-//      this.query.value = event.target.value
     }
   },
 
