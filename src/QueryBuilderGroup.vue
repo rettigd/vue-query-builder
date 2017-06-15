@@ -40,7 +40,9 @@
           :depth="depth + 1"
           :styled="styled"
           :labels="labels"
-          v-on:child-deletion-requested="removeChild">
+          v-on:child-deletion-requested="removeChild"
+          @child-value-updated="updateChildValue"
+        >
         </component>
       </div>
     </div>
@@ -62,14 +64,12 @@ export default {
   methods: {
     ruleById (ruleId) {
       var rule = null;
-
       this.rules.forEach(function(value){
         if ( value.id === ruleId ) {
           rule = value;
           return false;
         }
       });
-
       return rule;
     },
 
@@ -99,6 +99,10 @@ export default {
 
     remove () {
       this.$emit('child-deletion-requested', this.index);
+    },
+
+    updateChildValue (value) {
+      this.query.children[value.index].query.value = value.value;
     },
 
     removeChild (index) {

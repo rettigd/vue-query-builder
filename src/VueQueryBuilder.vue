@@ -107,7 +107,7 @@ export default {
 
       vm.rules.forEach(function(rule){
         if ( typeof vm.ruleTypes[rule.type] !== "undefined" ) {
-          mergedRules.push( deepClone(Object.assign({}, vm.ruleTypes[rule.type], rule)) );
+          mergedRules.push( Object.assign({}, vm.ruleTypes[rule.type], rule) );
         } else {
           mergedRules.push( rule );
         }
