@@ -47,7 +47,7 @@
 
   beforeMount () {
     if (typeof this.rule.type === 'object') {
-      this.$options.components[this.query.rule] = deepClone(this.rule.type);
+      this.$options.components[this.query.rule] = this.rule.type;
     }
   },
 
